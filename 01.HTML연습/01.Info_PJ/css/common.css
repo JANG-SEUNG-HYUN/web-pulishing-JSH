@@ -1,28 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- 메타정보
-        1) charset="UTF-8"
-        - 2바이트 인코딩처리
-        - 한글, 일본어 등 처리함 
-        2) viewport
-        - 모바일 화면 실제픽셀전환
-    -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+@charset "utf-8";
+/* @charset은 css문서의 문자형식을
+지정하는 코드임. utf-8은 2바이트 문자를
+모두 처리하는 방식임 */
 
-    <title>네이버요약뉴스 메인</title>
-    <!-- 외부CSS 불러오기 : 익스터널방식 -->
-    <link rel="stylesheet" href="../../../">
-    <style>
-      /* 스타일시트 영역에 CSS를 쓰는 방법 : 인터널방식 */
-      /* 
-        스타일시트 사용법:
-        선택자{
-          속성:값;
-          속성:값;
-        }
-      */
+/* Info PJ 공통 CSS - common.css */
 
       /* 1. 상단영역 */
       .header {
