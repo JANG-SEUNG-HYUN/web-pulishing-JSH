@@ -7,9 +7,10 @@
 
 /* 웹폰트 불러오기 */
 @import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Pen+Script&display=swap');
-/* 웹폰트체 셋팅법법 */
- /* font-family: "Nanum Pen Script", cursive;
- font-family: "Jua", sans-serif; */ 
+/* 웹폰트체 셋팅법
+ font-family: "Nanum Pen Script", cursive;
+ font-family: "Jua", sans-serif;
+*/
 
 /* 공통클래스 */
 /* 1. 보더 디자인 클래스 */
@@ -21,8 +22,18 @@
 }
 /* 2. 레이아웃 디자인 클래스 */
 .layout-common{
-/* 가로크기 */
-  width: 1280px;
+/* 가로크기 - 크기고정시 사용 */
+  /* width: 1280px; */
+
+  /* 최대가로크기 - max-width
+  최대크기보다 싸고있는박스가 작아지면 auto로 전환
+  -> 화면크기에 적응함! */
+  max-width: 1280px;
+
+  /* 최소가로크기 - min-width
+  최소사이즈보다 작아지지 않게 지정함 */
+  min-width: 700px;
+
   /* 블록요소 마진으로 가로중앙설정 : 마영오!
   -> 양쪽 마진이 auto이면 중앙에 옴! */
   margin: 0 auto;
@@ -57,7 +68,8 @@
 
 /* 타이틀 */
 #main-title {
-  font-family: "Jua", sans-serif; 
+  /* 글자체 */
+  font-family: "Jua", sans-serif;
   font-size: 50px;
   color: #4b61ec;
   margin: 0;
@@ -66,8 +78,8 @@
 /* 메뉴박스 */
 .header ul {
   /* 웹폰트 글자체 */
- font-family: "Nanum Pen Script", cursive;  
- /* 블릿없앰 lin */
+  font-family: "Nanum Pen Script", cursive;
+  /* 블릿없앰 lin */
   list-style: none;
   /* float:left를 사용했으므로
         자식요소 넘치는것 숨기기 사용! */
@@ -91,7 +103,7 @@
   float: left;
 
   /* 글자크기 */
-  font-size: 25px;
+  font-size: 30px;
   /* 패딩: 위아래0 양쪽17px */
   /* padding: 0 17px; */
 }
@@ -103,8 +115,8 @@
   text-decoration: none;
   /* 글자두껍게 */
   font-weight: bold;
-  /* 인라인요소간 진행방향 세로정렬 : vertical-aline */
-vertical: aline -4px;
+  /* 인라인요소간 진행방향 세로정렬 :   vertical-align */
+  vertical-align: -4px;
 }
 /* 링크 마우스 오버시
 가상클래스 선택자:hover 사용함! */
@@ -123,20 +135,23 @@ vertical: aline -4px;
 콜론을 가상요소는 두개 사용함(::)
 참고) 가상클래스는 콜론을 하나씀(:) 예) a:hover
 중요) 필수속성인 content를 반드시 써야함!
-->content값으로 문자내용 또는 이미지를 넣을 수 있다!
+-> content값으로 문자내용 또는 이미지를 넣을 수 있다!
 */
 /* .header ul li::after{
-  content: url(../images/naver_logo.png); */
+  content: url(../images/naver_logo.png);
+} */
 
-  /* 첫번쨰 li를 제외하고 선택하기
-  -> 형제선택자 +
-  앞에 어떤 요소가 있는 것만 선택가능!
-  li+li 앞에 li가 있는 li만 선택함! */
+/* 첫번째 li를 제외하고 선택하기
+-> 형제선택자 +
+앞에 어떤 요소가 있는 것만 선택가능!
+li+li 앞에 li가 있는 li만 선택함! */
 .header ul li+li::before{
   content: ' | ';
-  /* content: url(../images/naver_logo.png); */
   margin: 0 15px;
+  /* content: url(../images/naver_logo.png); */
 }
+
+
 
 /* 2. 메인영역 */
 /* .main {} */
@@ -161,11 +176,10 @@ span.ceo-name {
     text-decoration: underline;
     text-decoration-style: dotted;
     color: darkgreen;
-    }
-
+}
 /* 회사전화번호 */
 span.tel-num {
     text-decoration: underline;
-    text-decoration-style: dotted;
+    text-decoration-style: wavy;
     color: hotpink;
 }
